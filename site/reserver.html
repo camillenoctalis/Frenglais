@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Réserver un appel — Frenglais</title>
+  <meta name="description" content="Réserve ton appel vidéo avec un tuteur FRENGLAIS. Choisis ta langue, ton tuteur et ton créneau. Simple et rapide." />
+  <link rel="icon" href="logo2.png" sizes="any" />
+  <link rel="apple-touch-icon" href="logo2.png" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .booking-wrap {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+    .tutors-radio {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+    .tutor-radio-card {
+      border: 2px solid var(--gray-200);
+      border-radius: var(--radius);
+      padding: 16px;
+      cursor: pointer;
+      transition: all var(--transition);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .tutor-radio-card:hover { border-color: rgba(255,77,77,.4); }
+    .tutor-radio-card.selected { border-color: var(--red); background: rgba(255,77,77,.04); }
+    .tutor-radio-card input[type=radio] { display: none; }
+    .slots-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+      margin-bottom: 24px;
+    }
+    .slot-btn {
+      padding: 10px 8px;
+      border: 1.5px solid var(--gray-200);
+      border-radius: var(--radius-sm);
+      font-size: .82rem;
+      font-weight: 600;
+      cursor: pointer;
+      background: white;
+      transition: all var(--transition);
+      font-family: inherit;
+      text-align: center;
+    }
+    .slot-btn:hover { border-color: var(--red); color: var(--red); }
+    .slot-btn.selected { border-color: var(--red); background: var(--red); color: white; }
+    .slot-btn.unavailable { opacity: .35; cursor: not-allowed; }
+    .lang-radio {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+    .lang-option {
+      flex: 1;
+      border: 2px solid var(--gray-200);
+      border-radius: var(--radius);
+      padding: 20px 16px;
+      cursor: pointer;
+      text-align: center;
+      transition: all var(--transition);
+    }
+    .lang-option:hover { border-color: rgba(255,77,77,.4); }
+    .lang-option.selected { border-color: var(--red); background: rgba(255,77,77,.04); }
+    .lang-option-flag { font-size: 2rem; margin-bottom: 8px; }
+    .lang-option-name { font-size: .95rem; font-weight: 700; }
+    .confirmation-box {
+      background: rgba(16,185,129,.06);
+      border: 2px solid rgba(16,185,129,.25);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header id="header">
+  <div class="container">
+    <div class="header-inner">
+      <a href="index.html" class="logo"><img src="logo2.png" alt="Frenglais" /></a>
+      <ul class="nav-links">
+        <li><a href="index.html#methode" data-fr="Méthode claire"    data-en="How it works">Méthode claire</a></li>
+        <li><a href="credits.html"       data-fr="Boutique" data-en="Shop">Boutique</a></li>
+        <li><a href="eleve.html"         data-fr="Devenir élève"  data-en="Become a student">Devenir élève</a></li>
+        <li><a href="tuteur.html"        data-fr="Devenir tuteur" data-en="Become a tutor">Devenir tuteur</a></li>
+        <li><a href="index.html#faq"     data-fr="FAQ"            data-en="FAQ">FAQ</a></li>
+      </ul>
+      <div class="header-right">
+        <div class="lang-switcher">
+          <button class="lang-btn active" data-lang="fr">FR</button>
+          <button class="lang-btn"        data-lang="en">EN</button>
+        </div>
+        <a href="credits.html" class="btn btn-outline btn-sm"
+           data-fr="Mes crédits" data-en="My credits">Mes crédits</a>
+      </div>
+      <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<nav class="mobile-nav" id="mobileNav">
+  <a href="index.html#methode" data-fr="Méthode claire"    data-en="How it works">Méthode claire</a>
+  <a href="credits.html"       data-fr="Boutique" data-en="Shop">Boutique</a>
+  <a href="eleve.html"         data-fr="Devenir élève"  data-en="Become a student">Devenir élève</a>
+  <a href="tuteur.html"        data-fr="Devenir tuteur" data-en="Become a tutor">Devenir tuteur</a>
+  <div class="mobile-nav-lang">
+    <button class="lang-btn active" data-lang="fr">FR</button>
+    <button class="lang-btn"        data-lang="en">EN</button>
+  </div>
+</nav>
+
+<!-- PAGE -->
+<section style="padding:140px 0 80px">
+  <div class="container">
+    <div class="booking-wrap">
+
+      <!-- Title -->
+      <div style="text-align:center;margin-bottom:40px">
+        <div class="section-tag" style="margin:0 auto 16px"
+             data-fr="Réservation" data-en="Booking">Réservation</div>
+        <h1 class="display-md"
+            data-fr="Réserve ton appel."
+            data-en="Book your call.">Réserve ton appel.</h1>
+        <p style="color:var(--gray-600);margin-top:10px"
+           data-fr="Suis les étapes. L'appel dure 30 minutes. 1 crédit sera décompté."
+           data-en="Follow the steps. The call lasts 30 minutes. 1 credit will be deducted.">
+          Suis les étapes. L'appel dure 30 minutes. 1 crédit sera décompté.
+        </p>
+      </div>
+
+      <!-- Stepper -->
+      <div class="stepper" id="stepper">
+        <div class="step-dot active" data-step="1">
+          <div class="step-dot-circle">1</div>
+          <div class="step-dot-label" data-fr="Langue" data-en="Language">Langue</div>
+        </div>
+        <div class="step-connector"></div>
+        <div class="step-dot" data-step="2">
+          <div class="step-dot-circle">2</div>
+          <div class="step-dot-label" data-fr="Tuteur" data-en="Tutor">Tuteur</div>
+        </div>
+        <div class="step-connector"></div>
+        <div class="step-dot" data-step="3">
+          <div class="step-dot-circle">3</div>
+          <div class="step-dot-label" data-fr="Créneau" data-en="Slot">Créneau</div>
+        </div>
+        <div class="step-connector"></div>
+        <div class="step-dot" data-step="4">
+          <div class="step-dot-circle">4</div>
+          <div class="step-dot-label" data-fr="Confirmer" data-en="Confirm">Confirmer</div>
+        </div>
+      </div>
+
+      <!-- STEP 1: langue -->
+      <div class="step-panel" id="step1" data-step-num="1">
+        <h2 style="font-size:1.1rem;font-weight:700;margin-bottom:20px"
+            data-fr="1. Quelle langue veux-tu pratiquer ?"
+            data-en="1. Which language do you want to practice?">
+          1. Quelle langue veux-tu pratiquer ?
+        </h2>
+        <div class="lang-radio">
+          <div class="lang-option selected" onclick="selectLang(this, 'anglais')">
+            <div class="lang-option-flag">🇬🇧</div>
+            <div class="lang-option-name" data-fr="Anglais" data-en="English">Anglais</div>
+          </div>
+          <div class="lang-option" onclick="selectLang(this, 'francais')">
+            <div class="lang-option-flag">🇫🇷</div>
+            <div class="lang-option-name" data-fr="Français" data-en="French">Français</div>
+          </div>
+        </div>
+        <button class="btn btn-primary btn-lg" style="width:100%" data-step-next="step2"
+                data-fr="Choisir un tuteur →" data-en="Choose a tutor →">
+          Choisir un tuteur →
+        </button>
+      </div>
+
+      <!-- STEP 2: tuteur -->
+      <div class="step-panel" id="step2" data-step-num="2" style="display:none">
+        <h2 style="font-size:1.1rem;font-weight:700;margin-bottom:20px"
+            data-fr="2. Choisis ton tuteur (ou premier disponible)"
+            data-en="2. Choose your tutor (or first available)">
+          2. Choisis ton tuteur (ou premier disponible)
+        </h2>
+        <div class="tutors-radio" id="tutorsGrid">
+          <label class="tutor-radio-card selected" onclick="selectTutor(this)">
+            <input type="radio" name="tutor" value="sarah" checked />
+            <div style="width:40px;height:40px;border-radius:50%;background:var(--gray-100);display:flex;align-items:center;justify-content:center;font-size:1.3rem;shrink:0">👩🏻</div>
+            <div>
+              <div style="font-weight:700;font-size:.9rem">Sarah M.</div>
+              <div style="font-size:.75rem;color:var(--gray-600)" data-fr="Anglais · Disponible" data-en="English · Available">Anglais · Disponible</div>
+              <div style="font-size:.72rem;color:var(--vip)">★ 4.9</div>
+            </div>
+          </label>
+          <label class="tutor-radio-card" onclick="selectTutor(this)">
+            <input type="radio" name="tutor" value="marcus" />
+            <div style="width:40px;height:40px;border-radius:50%;background:var(--gray-100);display:flex;align-items:center;justify-content:center;font-size:1.3rem">👨🏽</div>
+            <div>
+              <div style="font-weight:700;font-size:.9rem">Marcus L.</div>
+              <div style="font-size:.75rem;color:var(--gray-600)" data-fr="Anglais US · Disponible" data-en="US English · Available">Anglais US · Disponible</div>
+              <div style="font-size:.72rem;color:var(--vip)">★ 5.0</div>
+            </div>
+          </label>
+          <label class="tutor-radio-card" onclick="selectTutor(this)">
+            <input type="radio" name="tutor" value="amelie" />
+            <div style="width:40px;height:40px;border-radius:50%;background:var(--gray-100);display:flex;align-items:center;justify-content:center;font-size:1.3rem">👩🏾</div>
+            <div>
+              <div style="font-weight:700;font-size:.9rem">Amélie R.</div>
+              <div style="font-size:.75rem;color:var(--gray-600)" data-fr="Français · Disponible" data-en="French · Available">Français · Disponible</div>
+              <div style="font-size:.72rem;color:var(--vip)">★ 4.8</div>
+            </div>
+          </label>
+          <label class="tutor-radio-card" onclick="selectTutor(this)">
+            <input type="radio" name="tutor" value="first" />
+            <div style="width:40px;height:40px;border-radius:50%;background:rgba(255,77,77,.1);display:flex;align-items:center;justify-content:center;font-size:1rem">⚡</div>
+            <div>
+              <div style="font-weight:700;font-size:.9rem" data-fr="Premier disponible" data-en="First available">Premier disponible</div>
+              <div style="font-size:.75rem;color:var(--gray-600)" data-fr="Connexion instantanée" data-en="Instant connection">Connexion instantanée</div>
+              <div style="font-size:.72rem;color:var(--red)" data-fr="Recommandé" data-en="Recommended">Recommandé</div>
+            </div>
+          </label>
+        </div>
+        <div style="display:flex;gap:10px">
+          <button class="btn btn-outline" data-step-next="step1"
+                  data-fr="← Retour" data-en="← Back">← Retour</button>
+          <button class="btn btn-primary btn-lg" style="flex:1" data-step-next="step3"
+                  data-fr="Choisir un créneau →" data-en="Choose a slot →">
+            Choisir un créneau →
+          </button>
+        </div>
+      </div>
+
+      <!-- STEP 3: créneau -->
+      <div class="step-panel" id="step3" data-step-num="3" style="display:none">
+        <h2 style="font-size:1.1rem;font-weight:700;margin-bottom:8px"
+            data-fr="3. Choisis ton créneau"
+            data-en="3. Choose your time slot">3. Choisis ton créneau</h2>
+        <p style="font-size:.85rem;color:var(--gray-600);margin-bottom:20px"
+           data-fr="Mercredi 11 juin 2025 · Horaires en heure locale (Paris)"
+           data-en="Wednesday June 11, 2025 · Local time (Paris)">
+          Mercredi 11 juin 2025 · Horaires en heure locale (Paris)
+        </p>
+        <div class="slots-grid">
+          <button class="slot-btn unavailable">08:00</button>
+          <button class="slot-btn unavailable">08:30</button>
+          <button class="slot-btn" onclick="selectSlot(this)">09:00</button>
+          <button class="slot-btn" onclick="selectSlot(this)">09:30</button>
+          <button class="slot-btn unavailable">10:00</button>
+          <button class="slot-btn" onclick="selectSlot(this)">10:30</button>
+          <button class="slot-btn" onclick="selectSlot(this)">11:00</button>
+          <button class="slot-btn unavailable">11:30</button>
+          <button class="slot-btn unavailable">14:00</button>
+          <button class="slot-btn" onclick="selectSlot(this)">14:30</button>
+          <button class="slot-btn selected" onclick="selectSlot(this)">15:00</button>
+          <button class="slot-btn" onclick="selectSlot(this)">15:30</button>
+          <button class="slot-btn" onclick="selectSlot(this)">16:00</button>
+          <button class="slot-btn unavailable">16:30</button>
+          <button class="slot-btn" onclick="selectSlot(this)">17:00</button>
+          <button class="slot-btn" onclick="selectSlot(this)">17:30</button>
+          <button class="slot-btn" onclick="selectSlot(this)">18:00</button>
+          <button class="slot-btn" onclick="selectSlot(this)">18:30</button>
+          <button class="slot-btn unavailable">19:00</button>
+          <button class="slot-btn" onclick="selectSlot(this)">19:30</button>
+        </div>
+        <div style="display:flex;gap:10px">
+          <button class="btn btn-outline" data-step-next="step2"
+                  data-fr="← Retour" data-en="← Back">← Retour</button>
+          <button class="btn btn-primary btn-lg" style="flex:1" data-step-next="step4"
+                  data-fr="Confirmer la réservation →" data-en="Confirm booking →">
+            Confirmer la réservation →
+          </button>
+        </div>
+      </div>
+
+      <!-- STEP 4: confirmation -->
+      <div class="step-panel" id="step4" data-step-num="4" style="display:none">
+        <div class="confirmation-box">
+          <div style="font-size:3rem;margin-bottom:16px">🎉</div>
+          <h2 style="font-size:1.4rem;font-weight:800;margin-bottom:8px;color:#059669"
+              data-fr="Réservation confirmée !"
+              data-en="Booking confirmed!">Réservation confirmée !</h2>
+          <p style="color:var(--gray-600);margin-bottom:24px"
+             data-fr="Ton appel est réservé. Un lien visio te sera envoyé par email 15 minutes avant la session."
+             data-en="Your call is booked. A video link will be sent to you by email 15 minutes before the session.">
+            Ton appel est réservé. Un lien visio te sera envoyé par email 15 minutes avant la session.
+          </p>
+          <div style="background:white;border:1px solid rgba(16,185,129,.2);border-radius:var(--radius);padding:20px;margin-bottom:24px;text-align:left">
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+              <div>
+                <div style="font-size:.72rem;font-weight:600;color:var(--gray-400);text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px"
+                     data-fr="Tuteur" data-en="Tutor">Tuteur</div>
+                <div style="font-weight:700">Sarah M.</div>
+              </div>
+              <div>
+                <div style="font-size:.72rem;font-weight:600;color:var(--gray-400);text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px"
+                     data-fr="Date" data-en="Date">Date</div>
+                <div style="font-weight:700"
+                     data-fr="Mercredi 11 juin 2025" data-en="Wednesday June 11, 2025">Mercredi 11 juin 2025</div>
+              </div>
+              <div>
+                <div style="font-size:.72rem;font-weight:600;color:var(--gray-400);text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px"
+                     data-fr="Heure" data-en="Time">Heure</div>
+                <div style="font-weight:700">15:00</div>
+              </div>
+              <div>
+                <div style="font-size:.72rem;font-weight:600;color:var(--gray-400);text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px"
+                     data-fr="Durée" data-en="Duration">Durée</div>
+                <div style="font-weight:700">30 min</div>
+              </div>
+            </div>
+            <div style="margin-top:14px;padding-top:14px;border-top:1px solid rgba(16,185,129,.15);display:flex;align-items:center;justify-content:space-between">
+              <span style="font-size:.85rem;color:var(--gray-600)"
+                    data-fr="Crédit décompté" data-en="Credit deducted">Crédit décompté</span>
+              <span style="font-size:.9rem;font-weight:700;color:#059669"
+                    data-fr="−1 crédit" data-en="−1 credit">−1 crédit</span>
+            </div>
+          </div>
+          <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
+            <a href="dashboard.html" class="btn btn-primary"
+               data-fr="Voir mon espace élève" data-en="View my student space">
+              Voir mon espace élève
+            </a>
+            <a href="reserver.html" class="btn btn-outline"
+               data-fr="Réserver un autre appel" data-en="Book another call">
+              Réserver un autre appel
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo"><img src="logo2.png" alt="Frenglais" /></div>
+        <p>Des vrais tuteurs, quand tu veux.</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-fr="Navigation" data-en="Navigation">Navigation</h4>
+        <ul>
+          <li><a href="eleve.html"   data-fr="Devenir élève"    data-en="Become a student">Devenir élève</a></li>
+          <li><a href="credits.html" data-fr="Boutique crédits" data-en="Credits shop">Boutique crédits</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-fr="Légal" data-en="Legal">Légal</h4>
+        <ul>
+          <li><a href="mailto:hello@frenglais.com">Contact</a></li>
+          <li><a href="#" data-fr="Mentions légales" data-en="Legal notice">Mentions légales</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span data-fr="© 2025 FRENGLAIS. Tous droits réservés." data-en="© 2025 FRENGLAIS. All rights reserved.">
+        © 2025 FRENGLAIS. Tous droits réservés.
+      </span>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script>
+function selectLang(el, lang) {
+  document.querySelectorAll('.lang-option').forEach(o => o.classList.remove('selected'));
+  el.classList.add('selected');
+}
+function selectTutor(el) {
+  document.querySelectorAll('.tutor-radio-card').forEach(c => c.classList.remove('selected'));
+  el.classList.add('selected');
+  el.querySelector('input').checked = true;
+}
+function selectSlot(btn) {
+  if (btn.classList.contains('unavailable')) return;
+  document.querySelectorAll('.slot-btn').forEach(b => b.classList.remove('selected'));
+  btn.classList.add('selected');
+}
+</script>
+</body>
+</html>

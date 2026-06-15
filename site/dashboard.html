@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mon espace — Frenglais</title>
+  <link rel="icon" href="logo2.png" sizes="any" />
+  <link rel="apple-touch-icon" href="logo2.png" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .history-table { width:100%; border-collapse:collapse; }
+    .history-table th { font-size:.72rem; font-weight:600; letter-spacing:.05em; text-transform:uppercase; color:var(--gray-400); padding:8px 12px; text-align:left; border-bottom:1px solid var(--gray-200); }
+    .history-table td { padding:12px 12px; font-size:.875rem; border-bottom:1px solid var(--gray-100); }
+    .status-pill { display:inline-flex;align-items:center;gap:4px;padding:3px 10px;border-radius:99px;font-size:.72rem;font-weight:600; }
+    .status-pill.done    { background:var(--traveller-l); color:#059669; }
+    .status-pill.upcoming{ background:var(--student-l);  color:#2563eb; }
+    .status-pill.cancelled{ background:var(--gray-100); color:var(--gray-600); }
+    .next-call-card {
+      background:var(--black);
+      border-radius:var(--radius-lg);
+      padding:32px;
+      color:white;
+      position:relative;
+      overflow:hidden;
+      margin-bottom:16px;
+    }
+    .next-call-card::before {
+      content:'';
+      position:absolute;
+      top:-30%;right:-5%;
+      width:300px;height:300px;
+      background:radial-gradient(circle,rgba(255,77,77,.15) 0%,transparent 70%);
+    }
+  </style>
+</head>
+<body>
+
+<div class="dashboard-layout">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-logo">
+      <img src="logo2.png" alt="Frenglais" />
+    </div>
+    <a href="dashboard.html" class="sidebar-link active">📊
+      <span data-fr="Tableau de bord" data-en="Dashboard">Tableau de bord</span>
+    </a>
+    <a href="reserver.html" class="sidebar-link">📅
+      <span data-fr="Réserver un appel" data-en="Book a call">Réserver un appel</span>
+    </a>
+    <a href="credits.html" class="sidebar-link">🪙
+      <span data-fr="Acheter des crédits" data-en="Buy credits">Acheter des crédits</span>
+    </a>
+    <a href="#" class="sidebar-link">🕐
+      <span data-fr="Historique" data-en="History">Historique</span>
+    </a>
+    <a href="#" class="sidebar-link">👤
+      <span data-fr="Mon profil" data-en="My profile">Mon profil</span>
+    </a>
+    <a href="#" class="sidebar-link">🧾
+      <span data-fr="Factures" data-en="Invoices">Factures</span>
+    </a>
+
+    <div class="sidebar-credit-block">
+      <div class="sidebar-credit-value">3</div>
+      <div class="sidebar-credit-label" data-fr="crédits restants" data-en="credits remaining">crédits restants</div>
+      <a href="credits.html" class="btn btn-primary btn-sm" style="width:100%;justify-content:center"
+         data-fr="Recharger" data-en="Top up">Recharger</a>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="dashboard-main">
+
+    <!-- Lang switcher mobile -->
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:32px">
+      <div class="dashboard-header" style="margin-bottom:0">
+        <h1 data-fr="Bonjour, Camille 👋" data-en="Hello, Camille 👋">Bonjour, Camille 👋</h1>
+        <p data-fr="Voici ton espace élève FRENGLAIS." data-en="Here is your FRENGLAIS student space.">
+          Voici ton espace élève FRENGLAIS.
+        </p>
+      </div>
+      <div class="lang-switcher">
+        <button class="lang-btn active" data-lang="fr">FR</button>
+        <button class="lang-btn"        data-lang="en">EN</button>
+      </div>
+    </div>
+
+    <!-- Stats -->
+    <div class="db-grid">
+      <div class="db-card red">
+        <div class="db-card-value" style="color:var(--red)">3</div>
+        <div class="db-card-label" data-fr="Crédits restants" data-en="Credits remaining">Crédits restants</div>
+      </div>
+      <div class="db-card">
+        <div class="db-card-value">7</div>
+        <div class="db-card-label" data-fr="Appels effectués" data-en="Calls completed">Appels effectués</div>
+      </div>
+      <div class="db-card green">
+        <div class="db-card-value" style="color:var(--traveller)">3h 30</div>
+        <div class="db-card-label" data-fr="De pratique totale" data-en="Total practice time">De pratique totale</div>
+      </div>
+    </div>
+
+    <!-- Prochain appel -->
+    <div class="next-call-card">
+      <div style="position:relative;z-index:1">
+        <p style="font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:12px"
+           data-fr="Prochain appel" data-en="Next call">Prochain appel</p>
+        <div style="display:flex;align-items:center;gap:24px;flex-wrap:wrap">
+          <div>
+            <div style="font-size:1.6rem;font-weight:800;color:white"
+                 data-fr="Mercredi 11 juin · 15h00" data-en="Wednesday June 11 · 3:00pm">
+              Mercredi 11 juin · 15h00
+            </div>
+            <div style="color:rgba(255,255,255,.5);font-size:.9rem;margin-top:4px">
+              Sarah M. · Anglais · 30 min
+            </div>
+          </div>
+          <div style="display:flex;gap:10px;margin-left:auto">
+            <a href="#" class="btn btn-outline" style="border-color:rgba(255,255,255,.2);color:white"
+               data-fr="Annuler" data-en="Cancel">Annuler</a>
+            <a href="#" class="btn btn-primary"
+               data-fr="Rejoindre l'appel" data-en="Join call">Rejoindre l'appel</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Historique -->
+    <div style="background:white;border:1px solid var(--gray-200);border-radius:var(--radius-lg);padding:24px">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px">
+        <h2 style="font-size:1rem;font-weight:700"
+            data-fr="Historique des appels" data-en="Call history">Historique des appels</h2>
+        <a href="reserver.html" class="btn btn-primary btn-sm"
+           data-fr="+ Réserver un appel" data-en="+ Book a call">+ Réserver un appel</a>
+      </div>
+      <table class="history-table">
+        <thead>
+          <tr>
+            <th data-fr="Tuteur"  data-en="Tutor">Tuteur</th>
+            <th data-fr="Langue"  data-en="Language">Langue</th>
+            <th data-fr="Date"    data-en="Date">Date</th>
+            <th data-fr="Durée"   data-en="Duration">Durée</th>
+            <th data-fr="Statut"  data-en="Status">Statut</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Sarah M.</strong></td>
+            <td>🇬🇧 Anglais</td>
+            <td data-fr="11 juin 2025" data-en="June 11, 2025">11 juin 2025</td>
+            <td>30 min</td>
+            <td><span class="status-pill upcoming" data-fr="À venir" data-en="Upcoming">À venir</span></td>
+          </tr>
+          <tr>
+            <td><strong>Marcus L.</strong></td>
+            <td>🇺🇸 Anglais US</td>
+            <td data-fr="4 juin 2025" data-en="June 4, 2025">4 juin 2025</td>
+            <td>30 min</td>
+            <td><span class="status-pill done" data-fr="Effectué" data-en="Completed">Effectué</span></td>
+          </tr>
+          <tr>
+            <td><strong>Sarah M.</strong></td>
+            <td>🇬🇧 Anglais</td>
+            <td data-fr="28 mai 2025" data-en="May 28, 2025">28 mai 2025</td>
+            <td>30 min</td>
+            <td><span class="status-pill done" data-fr="Effectué" data-en="Completed">Effectué</span></td>
+          </tr>
+          <tr>
+            <td><strong>Amélie R.</strong></td>
+            <td>🇫🇷 Français</td>
+            <td data-fr="20 mai 2025" data-en="May 20, 2025">20 mai 2025</td>
+            <td>30 min</td>
+            <td><span class="status-pill cancelled" data-fr="Annulé" data-en="Cancelled">Annulé</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Quick actions -->
+    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:16px">
+      <a href="credits.html" style="background:white;border:1px solid var(--gray-200);border-radius:var(--radius);padding:20px;display:flex;gap:12px;align-items:center;transition:all .2s;text-decoration:none;color:inherit" onmouseover="this.style.borderColor='rgba(255,77,77,.3)'" onmouseout="this.style.borderColor='var(--gray-200)'">
+        <span style="font-size:1.5rem">🪙</span>
+        <div>
+          <div style="font-size:.9rem;font-weight:700" data-fr="Acheter des crédits" data-en="Buy credits">Acheter des crédits</div>
+          <div style="font-size:.78rem;color:var(--gray-600)" data-fr="Boutique en ligne" data-en="Online shop">Boutique en ligne</div>
+        </div>
+      </a>
+      <a href="reserver.html" style="background:white;border:1px solid var(--gray-200);border-radius:var(--radius);padding:20px;display:flex;gap:12px;align-items:center;transition:all .2s;text-decoration:none;color:inherit" onmouseover="this.style.borderColor='rgba(255,77,77,.3)'" onmouseout="this.style.borderColor='var(--gray-200)'">
+        <span style="font-size:1.5rem">📅</span>
+        <div>
+          <div style="font-size:.9rem;font-weight:700" data-fr="Réserver un appel" data-en="Book a call">Réserver un appel</div>
+          <div style="font-size:.78rem;color:var(--gray-600)" data-fr="Choisir un tuteur" data-en="Choose a tutor">Choisir un tuteur</div>
+        </div>
+      </a>
+    </div>
+
+  </main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Devenir élève — Frenglais</title>
+  <meta name="description" content="Deviens élève FRENGLAIS. Pratique l'anglais ou le français avec un vrai tuteur en visio. Achète tes crédits, réserve, progresse." />
+  <link rel="icon" href="logo2.png" sizes="any" />
+  <link rel="apple-touch-icon" href="logo2.png" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- HEADER -->
+<header id="header">
+  <div class="container">
+    <div class="header-inner">
+      <a href="index.html" class="logo"><img src="logo2.png" alt="Frenglais" /></a>
+      <ul class="nav-links">
+        <li><a href="index.html#methode" data-fr="Méthode claire"    data-en="How it works">Méthode claire</a></li>
+        <li><a href="credits.html"       data-fr="Boutique" data-en="Shop">Boutique</a></li>
+        <li><a href="eleve.html"         data-fr="Devenir élève"  data-en="Become a student" style="color:var(--red)">Devenir élève</a></li>
+        <li><a href="tuteur.html"        data-fr="Devenir tuteur" data-en="Become a tutor">Devenir tuteur</a></li>
+        <li><a href="index.html#faq"     data-fr="FAQ"            data-en="FAQ">FAQ</a></li>
+      </ul>
+      <div class="header-right">
+        <div class="lang-switcher">
+          <button class="lang-btn active" data-lang="fr">FR</button>
+          <button class="lang-btn"        data-lang="en">EN</button>
+        </div>
+        <a href="credits.html" class="btn btn-primary btn-sm"
+           data-fr="Acheter des crédits" data-en="Buy credits">Acheter des crédits</a>
+      </div>
+      <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<nav class="mobile-nav" id="mobileNav">
+  <a href="index.html#methode" data-fr="Méthode claire"    data-en="How it works">Méthode claire</a>
+  <a href="credits.html"       data-fr="Boutique" data-en="Shop">Boutique</a>
+  <a href="eleve.html"         data-fr="Devenir élève"  data-en="Become a student">Devenir élève</a>
+  <a href="tuteur.html"        data-fr="Devenir tuteur" data-en="Become a tutor">Devenir tuteur</a>
+  <a href="index.html#faq"     data-fr="FAQ"            data-en="FAQ">FAQ</a>
+  <div class="mobile-nav-lang">
+    <button class="lang-btn active" data-lang="fr">FR</button>
+    <button class="lang-btn"        data-lang="en">EN</button>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="container">
+    <div class="hero-badge"
+         data-fr="Élèves" data-en="Students">Élèves</div>
+    <h1 class="display-xl"
+        data-fr="Pratique une langue avec un vrai tuteur,<br>sans engagement compliqué."
+        data-fr-html="Pratique une langue avec un vrai tuteur,<br>sans engagement compliqué."
+        data-en-html="Practice a language with a real tutor,<br>without complex commitment.">
+      Pratique une langue avec un vrai tuteur,<br>sans engagement compliqué.
+    </h1>
+    <p data-fr="Un crédit = 30 minutes de conversation en visio. Tu achètes quand tu veux, tu pratiques quand tu peux."
+       data-en="1 credit = 30 minutes of video conversation. Buy when you want, practice when you can.">
+      Un crédit = 30 minutes de conversation en visio. Tu achètes quand tu veux, tu pratiques quand tu peux.
+    </p>
+    <div class="cta-group">
+      <a href="credits.html" class="btn btn-primary btn-lg"
+         data-fr="Voir les pass" data-en="See passes">Voir les pass</a>
+      <a href="reserver.html" class="btn btn-outline btn-lg"
+         data-fr="Réserver un appel" data-en="Book a call">Réserver un appel</a>
+    </div>
+  </div>
+</section>
+
+<!-- COMMENT ÇA MARCHE -->
+<section>
+  <div class="container">
+    <div class="section-header center">
+      <div class="section-tag" data-fr="Parcours élève" data-en="Student journey">Parcours élève</div>
+      <h2 class="display-md"
+          data-fr="Tout simple, en 4 étapes."
+          data-en="Super simple, in 4 steps.">Tout simple, en 4 étapes.</h2>
+    </div>
+
+    <div class="steps-grid">
+      <div class="step-card reveal">
+        <div class="step-num">01</div>
+        <div class="step-icon">🪙</div>
+        <h3 data-fr="Achète tes crédits"  data-en="Buy your credits">Achète tes crédits</h3>
+        <p  data-fr="Choisis un pack ou un pass. 1 crédit = 30 min de visio."
+            data-en="Choose a pack or pass. 1 credit = 30 min of video.">
+          Choisis un pack ou un pass. 1 crédit = 30 min de visio.
+        </p>
+      </div>
+      <div class="step-card reveal">
+        <div class="step-num">02</div>
+        <div class="step-icon">👤</div>
+        <h3 data-fr="Crée ton compte"     data-en="Create your account">Crée ton compte</h3>
+        <p  data-fr="Inscription rapide. Ton solde de crédits est disponible immédiatement."
+            data-en="Quick sign-up. Your credit balance is available immediately.">
+          Inscription rapide. Ton solde de crédits est disponible immédiatement.
+        </p>
+      </div>
+      <div class="step-card reveal">
+        <div class="step-num">03</div>
+        <div class="step-icon">📅</div>
+        <h3 data-fr="Réserve un tuteur"   data-en="Book a tutor">Réserve un tuteur</h3>
+        <p  data-fr="Choisis un tuteur disponible et un créneau qui te convient."
+            data-en="Choose an available tutor and a time slot that suits you.">
+          Choisis un tuteur disponible et un créneau qui te convient.
+        </p>
+      </div>
+      <div class="step-card reveal">
+        <div class="step-num">04</div>
+        <div class="step-icon">🎙️</div>
+        <h3 data-fr="Lance la visio"      data-en="Start the video call">Lance la visio</h3>
+        <p  data-fr="Un crédit est décompté. La conversation commence. Tu progresses."
+            data-en="One credit is deducted. The conversation starts. You improve.">
+          Un crédit est décompté. La conversation commence. Tu progresses.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider" />
+
+<!-- CAS D'USAGE -->
+<section class="gray">
+  <div class="container">
+    <div class="section-header center">
+      <div class="section-tag" data-fr="Pour qui ?" data-en="For who?">Pour qui ?</div>
+      <h2 class="display-md"
+          data-fr="FRENGLAIS est fait pour toi si…"
+          data-en="FRENGLAIS is made for you if…">FRENGLAIS est fait pour toi si…</h2>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px">
+      <div class="reveal" style="background:white;border:1.5px solid var(--gray-200);border-radius:var(--radius-lg);padding:28px 24px;display:flex;gap:16px;align-items:flex-start">
+        <span style="font-size:1.8rem;line-height:1">✈️</span>
+        <div>
+          <h3 style="font-size:.95rem;font-weight:700;margin-bottom:6px"
+              data-fr="Tu pars à l'étranger"
+              data-en="You're going abroad">Tu pars à l'étranger</h3>
+          <p style="font-size:.85rem;color:var(--gray-600)"
+             data-fr="Quelques sessions avant ton voyage pour te sentir à l'aise."
+             data-en="A few sessions before your trip to feel comfortable.">
+            Quelques sessions avant ton voyage pour te sentir à l'aise.
+          </p>
+        </div>
+      </div>
+      <div class="reveal" style="background:white;border:1.5px solid var(--gray-200);border-radius:var(--radius-lg);padding:28px 24px;display:flex;gap:16px;align-items:flex-start">
+        <span style="font-size:1.8rem;line-height:1">💼</span>
+        <div>
+          <h3 style="font-size:.95rem;font-weight:700;margin-bottom:6px"
+              data-fr="Tu passes un entretien"
+              data-en="You have a job interview">Tu passes un entretien</h3>
+          <p style="font-size:.85rem;color:var(--gray-600)"
+             data-fr="Prépare tes réponses, ta prise de parole et ta fluidité."
+             data-en="Prepare your answers, speaking and fluency.">
+            Prépare tes réponses, ta prise de parole et ta fluidité.
+          </p>
+        </div>
+      </div>
+      <div class="reveal" style="background:white;border:1.5px solid var(--gray-200);border-radius:var(--radius-lg);padding:28px 24px;display:flex;gap:16px;align-items:flex-start">
+        <span style="font-size:1.8rem;line-height:1">🎓</span>
+        <div>
+          <h3 style="font-size:.95rem;font-weight:700;margin-bottom:6px"
+              data-fr="Tu prépares un examen"
+              data-en="You're preparing an exam">Tu prépares un examen</h3>
+          <p style="font-size:.85rem;color:var(--gray-600)"
+             data-fr="IELTS, TOEFL, DELF, TCF, oral de BTS, CPGE…"
+             data-en="IELTS, TOEFL, DELF, TCF, oral exams…">
+            IELTS, TOEFL, DELF, TCF, oral de BTS, CPGE…
+          </p>
+        </div>
+      </div>
+      <div class="reveal" style="background:white;border:1.5px solid var(--gray-200);border-radius:var(--radius-lg);padding:28px 24px;display:flex;gap:16px;align-items:flex-start">
+        <span style="font-size:1.8rem;line-height:1">🧠</span>
+        <div>
+          <h3 style="font-size:.95rem;font-weight:700;margin-bottom:6px"
+              data-fr="Tu veux juste progresser"
+              data-en="You just want to improve">Tu veux juste progresser</h3>
+          <p style="font-size:.85rem;color:var(--gray-600)"
+             data-fr="Parle régulièrement, sans pression, à ton rythme."
+             data-en="Speak regularly, without pressure, at your own pace.">
+            Parle régulièrement, sans pression, à ton rythme.
+          </p>
+        </div>
+      </div>
+      <div class="reveal" style="background:white;border:1.5px solid var(--gray-200);border-radius:var(--radius-lg);padding:28px 24px;display:flex;gap:16px;align-items:flex-start">
+        <span style="font-size:1.8rem;line-height:1">🌍</span>
+        <div>
+          <h3 style="font-size:.95rem;font-weight:700;margin-bottom:6px"
+              data-fr="Tu es expat ou bilingue"
+              data-en="You're an expat or bilingual">Tu es expat ou bilingue</h3>
+          <p style="font-size:.85rem;color:var(--gray-600)"
+             data-fr="Maintiens et améliore une langue que tu parles déjà un peu."
+             data-en="Maintain and improve a language you already speak a little.">
+            Maintiens et améliore une langue que tu parles déjà un peu.
+          </p>
+        </div>
+      </div>
+      <div class="reveal" style="background:white;border:1.5px solid var(--gray-200);border-radius:var(--radius-lg);padding:28px 24px;display:flex;gap:16px;align-items:flex-start">
+        <span style="font-size:1.8rem;line-height:1">🏢</span>
+        <div>
+          <h3 style="font-size:.95rem;font-weight:700;margin-bottom:6px"
+              data-fr="Tu travailles à l'international"
+              data-en="You work internationally">Tu travailles à l'international</h3>
+          <p style="font-size:.85rem;color:var(--gray-600)"
+             data-fr="Réunions, emails, appels — maîtrise l'anglais professionnel."
+             data-en="Meetings, emails, calls — master professional English.">
+            Réunions, emails, appels — maîtrise l'anglais professionnel.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider" />
+
+<!-- PASS -->
+<section>
+  <div class="container">
+    <div class="section-header center">
+      <div class="section-tag" data-fr="Tarifs" data-en="Pricing">Tarifs</div>
+      <h2 class="display-md"
+          data-fr="Choisis ton pass"
+          data-en="Choose your pass">Choisis ton pass</h2>
+      <p data-fr="Des offres simples, sans engagement. Valables 3 mois."
+         data-en="Simple offers, no commitment. Valid 3 months.">
+        Des offres simples, sans engagement. Valables 3 mois.
+      </p>
+    </div>
+
+    <div class="passes-grid">
+      <div class="pass-card traveller reveal">
+        <div class="pass-header">
+          <span class="pass-name">Traveller</span>
+          <span class="pass-tag" data-fr="Pour commencer" data-en="To start">Pour commencer</span>
+        </div>
+        <p class="pass-desc"
+           data-fr="Pour voyager, se débrouiller à l'oral et pratiquer les bases."
+           data-en="For traveling, getting by in conversation, and practicing the basics.">
+          Pour voyager, se débrouiller à l'oral et pratiquer les bases.
+        </p>
+        <div class="pass-price-block">
+          <div class="pass-price">45 €</div>
+          <div class="pass-credits" data-fr="3 crédits" data-en="3 credits">3 crédits</div>
+          <div class="pass-per" data-fr="15 € / crédit" data-en="€15 / credit">15 € / crédit</div>
+        </div>
+        <ul class="pass-features">
+          <li data-fr="3 appels de 30 minutes" data-en="3 × 30-min calls">3 appels de 30 minutes</li>
+          <li data-fr="Anglais ou français"     data-en="English or French">Anglais ou français</li>
+          <li data-fr="Idéal pour les voyages"  data-en="Perfect for trips">Idéal pour les voyages</li>
+          <li data-fr="Valable 3 mois"          data-en="Valid 3 months">Valable 3 mois</li>
+        </ul>
+        <a href="credits.html" class="btn" data-fr="Choisir Traveller" data-en="Choose Traveller">Choisir Traveller</a>
+      </div>
+
+      <div class="pass-card boss reveal">
+        <div class="pass-header">
+          <span class="pass-name">Boss</span>
+          <span class="pass-tag" data-fr="Le plus populaire" data-en="Most popular">Le plus populaire</span>
+        </div>
+        <p class="pass-desc"
+           data-fr="Pour progresser dans un contexte professionnel."
+           data-en="To improve in a professional context.">
+          Pour progresser dans un contexte professionnel.
+        </p>
+        <div class="pass-price-block">
+          <div class="pass-price">70 €</div>
+          <div class="pass-credits" data-fr="5 crédits" data-en="5 credits">5 crédits</div>
+          <div class="pass-per" data-fr="14 € / crédit" data-en="€14 / credit">14 € / crédit</div>
+        </div>
+        <ul class="pass-features">
+          <li data-fr="5 appels de 30 minutes"   data-en="5 × 30-min calls">5 appels de 30 minutes</li>
+          <li data-fr="Pratique professionnelle"  data-en="Professional practice">Pratique professionnelle</li>
+          <li data-fr="Préparation entretien"     data-en="Interview preparation">Préparation entretien</li>
+          <li data-fr="Prise de parole"           data-en="Public speaking">Prise de parole</li>
+        </ul>
+        <a href="credits.html" class="btn" data-fr="Choisir Boss" data-en="Choose Boss">Choisir Boss</a>
+      </div>
+
+      <div class="pass-card featured reveal">
+        <div class="pass-header">
+          <span class="pass-name">VIP</span>
+          <span class="pass-tag" data-fr="Premium" data-en="Premium">Premium</span>
+        </div>
+        <p class="pass-desc"
+           data-fr="Pour un accompagnement régulier et premium."
+           data-en="For regular, premium support.">
+          Pour un accompagnement régulier et premium.
+        </p>
+        <div class="pass-price-block">
+          <div class="pass-price">135 €</div>
+          <div class="pass-credits" data-fr="10 crédits" data-en="10 credits">10 crédits</div>
+          <div class="pass-per" data-fr="13,50 € / crédit" data-en="€13.50 / credit">13,50 € / crédit</div>
+        </div>
+        <ul class="pass-features">
+          <li data-fr="10 appels de 30 minutes"     data-en="10 × 30-min calls">10 appels de 30 minutes</li>
+          <li data-fr="Suivi prioritaire"            data-en="Priority follow-up">Suivi prioritaire</li>
+          <li data-fr="Progression régulière"        data-en="Regular progress">Progression régulière</li>
+          <li data-fr="Meilleur rapport qualité/prix" data-en="Best value">Meilleur rapport qualité/prix</li>
+        </ul>
+        <a href="credits.html" class="btn" data-fr="Choisir VIP" data-en="Choose VIP">Choisir VIP</a>
+      </div>
+    </div>
+
+    <div class="student-note reveal" style="margin-top:20px">
+      🎓
+      <span data-fr="Tarif étudiant disponible sur demande."
+            data-en="Student discount available on request.">
+        Tarif étudiant disponible sur demande.
+      </span>
+      <a href="mailto:hello@frenglais.com" class="btn btn-ghost btn-sm"
+         data-fr="Demander le tarif" data-en="Request discount"
+         style="color:#1d4ed8;padding:4px 12px">Demander le tarif</a>
+    </div>
+  </div>
+</section>
+
+<hr class="divider" />
+
+<!-- TÉMOIGNAGES -->
+<section class="gray">
+  <div class="container">
+    <div class="section-header center">
+      <div class="section-tag" data-fr="Témoignages" data-en="Testimonials">Témoignages</div>
+      <h2 class="display-md"
+          data-fr="Ils ont progressé avec FRENGLAIS"
+          data-en="They improved with FRENGLAIS">Ils ont progressé avec FRENGLAIS</h2>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px">
+      <div class="reveal" style="background:white;border:1px solid var(--gray-200);border-radius:var(--radius-lg);padding:28px 24px">
+        <div style="color:var(--vip);margin-bottom:12px;font-size:1rem">★★★★★</div>
+        <p style="font-size:.9rem;color:var(--gray-600);line-height:1.7;margin-bottom:20px"
+           data-fr="&laquo; J'ai utilisé 3 crédits avant mon entretien chez une boîte américaine. Je l'ai eu. FRENGLAIS est la meilleure décision que j'ai prise. &raquo;"
+           data-en="&laquo; I used 3 credits before my interview at an American company. I got the job. FRENGLAIS is the best decision I made. &raquo;">
+          « J'ai utilisé 3 crédits avant mon entretien chez une boîte américaine. Je l'ai eu. FRENGLAIS est la meilleure décision que j'ai prise. »
+        </p>
+        <div style="display:flex;align-items:center;gap:10px">
+          <div style="width:36px;height:36px;border-radius:50%;background:var(--gray-200);display:flex;align-items:center;justify-content:center;font-size:1.2rem">👩🏻</div>
+          <div>
+            <div style="font-size:.85rem;font-weight:700">Manon D.</div>
+            <div style="font-size:.75rem;color:var(--gray-400)"
+                 data-fr="Pass Boss · Anglais professionnel"
+                 data-en="Boss Pass · Professional English">Pass Boss · Anglais professionnel</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal" style="background:white;border:1px solid var(--gray-200);border-radius:var(--radius-lg);padding:28px 24px">
+        <div style="color:var(--vip);margin-bottom:12px;font-size:1rem">★★★★★</div>
+        <p style="font-size:.9rem;color:var(--gray-600);line-height:1.7;margin-bottom:20px"
+           data-fr="&laquo; Simple, efficace, humain. Je prenais 1 session par semaine avant mon IELTS. Mon score oral a augmenté de 1.5 bande. &raquo;"
+           data-en="&laquo; Simple, effective, human. I had 1 session per week before my IELTS. My oral score went up by 1.5 bands. &raquo;">
+          « Simple, efficace, humain. Je prenais 1 session par semaine avant mon IELTS. Mon score oral a augmenté de 1.5 bande. »
+        </p>
+        <div style="display:flex;align-items:center;gap:10px">
+          <div style="width:36px;height:36px;border-radius:50%;background:var(--gray-200);display:flex;align-items:center;justify-content:center;font-size:1.2rem">👨🏽</div>
+          <div>
+            <div style="font-size:.85rem;font-weight:700">Karim B.</div>
+            <div style="font-size:.75rem;color:var(--gray-400)"
+                 data-fr="Pass VIP · IELTS préparation"
+                 data-en="VIP Pass · IELTS preparation">Pass VIP · IELTS préparation</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal" style="background:white;border:1px solid var(--gray-200);border-radius:var(--radius-lg);padding:28px 24px">
+        <div style="color:var(--vip);margin-bottom:12px;font-size:1rem">★★★★★</div>
+        <p style="font-size:.9rem;color:var(--gray-600);line-height:1.7;margin-bottom:20px"
+           data-fr="&laquo; J'apprends le français depuis 2 ans. Avec FRENGLAIS, j'ai enfin quelqu'un qui me corrige naturellement, pas une app qui me répète. &raquo;"
+           data-en="&laquo; I've been learning French for 2 years. With FRENGLAIS, I finally have someone who corrects me naturally, not an app that repeats things. &raquo;">
+          « J'apprends le français depuis 2 ans. Avec FRENGLAIS, j'ai enfin quelqu'un qui me corrige naturellement, pas une app qui me répète. »
+        </p>
+        <div style="display:flex;align-items:center;gap:10px">
+          <div style="width:36px;height:36px;border-radius:50%;background:var(--gray-200);display:flex;align-items:center;justify-content:center;font-size:1.2rem">👩🏾</div>
+          <div>
+            <div style="font-size:.85rem;font-weight:700">Aisha K.</div>
+            <div style="font-size:.75rem;color:var(--gray-400)"
+                 data-fr="Pass Traveller · Français"
+                 data-en="Traveller Pass · French">Pass Traveller · Français</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section style="background:var(--black);padding:96px 0;text-align:center">
+  <div class="container">
+    <p style="font-size:.8rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:16px"
+       data-fr="Commence maintenant" data-en="Start now">Commence maintenant</p>
+    <h2 class="display-md" style="color:white;margin-bottom:16px"
+        data-fr="Commence avec ton premier crédit."
+        data-en="Start with your first credit.">Commence avec ton premier crédit.</h2>
+    <p style="color:rgba(255,255,255,.5);margin-bottom:36px;font-size:1.05rem"
+       data-fr="16 € pour 30 minutes de vraie conversation. Aucune surprise."
+       data-en="€16 for 30 minutes of real conversation. No surprises.">
+      16 € pour 30 minutes de vraie conversation. Aucune surprise.
+    </p>
+    <a href="credits.html" class="btn btn-primary btn-lg"
+       data-fr="Acheter mon premier crédit" data-en="Buy my first credit">
+      Acheter mon premier crédit
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo"><img src="logo2.png" alt="Frenglais" /></div>
+        <p data-fr-html="Des vrais tuteurs, quand tu veux.<br>Pratique l'anglais ou le français en visio, simplement."
+           data-en-html="Real tutors, whenever you need.<br>Practice English or French by video, simply.">
+          Des vrais tuteurs, quand tu veux.<br>Pratique l'anglais ou le français en visio, simplement.
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4 data-fr="Navigation" data-en="Navigation">Navigation</h4>
+        <ul>
+          <li><a href="eleve.html"   data-fr="Devenir élève"    data-en="Become a student">Devenir élève</a></li>
+          <li><a href="tuteur.html"  data-fr="Devenir tuteur"   data-en="Become a tutor">Devenir tuteur</a></li>
+          <li><a href="credits.html" data-fr="Boutique crédits" data-en="Credits shop">Boutique crédits</a></li>
+          <li><a href="reserver.html" data-fr="Réserver un appel" data-en="Book a call">Réserver un appel</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-fr="Légal" data-en="Legal">Légal</h4>
+        <ul>
+          <li><a href="mailto:hello@frenglais.com" data-fr="Contact" data-en="Contact">Contact</a></li>
+          <li><a href="#" data-fr="Mentions légales" data-en="Legal notice">Mentions légales</a></li>
+          <li><a href="#" data-fr="Confidentialité" data-en="Privacy">Confidentialité</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span data-fr="© 2025 FRENGLAIS. Tous droits réservés."
+            data-en="© 2025 FRENGLAIS. All rights reserved.">© 2025 FRENGLAIS. Tous droits réservés.</span>
+      <span data-fr="100 % humain · Pas d'IA"
+            data-en="100% human · No AI">100 % humain · Pas d'IA</span>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

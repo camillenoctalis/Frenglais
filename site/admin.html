@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin — Frenglais</title>
+  <link rel="icon" href="logo2.png" sizes="any" />
+  <link rel="apple-touch-icon" href="logo2.png" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .admin-table { width:100%;border-collapse:collapse; }
+    .admin-table th { font-size:.7rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--gray-400);padding:8px 14px;text-align:left;border-bottom:1px solid var(--gray-200); }
+    .admin-table td { padding:12px 14px;font-size:.85rem;border-bottom:1px solid var(--gray-100);vertical-align:middle; }
+    .admin-table tr:last-child td { border-bottom:none; }
+    .action-btn { padding:4px 12px;border-radius:6px;font-size:.72rem;font-weight:600;cursor:pointer;border:none;font-family:inherit;transition:.15s; }
+    .action-btn.validate { background:var(--traveller-l);color:#059669; }
+    .action-btn.validate:hover { background:var(--traveller);color:white; }
+    .action-btn.reject  { background:var(--boss-l);color:#dc2626; }
+    .action-btn.reject:hover  { background:var(--boss);color:white; }
+    .action-btn.view    { background:var(--gray-100);color:var(--gray-600); }
+    .admin-nav-section { font-size:.62rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.25);padding:16px 14px 6px; }
+  </style>
+</head>
+<body>
+
+<div class="dashboard-layout">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-logo"><img src="logo2.png" alt="Frenglais" /></div>
+
+    <div class="admin-nav-section">GÉNÉRAL</div>
+    <a href="admin.html" class="sidebar-link active">📊 Dashboard</a>
+    <a href="#" class="sidebar-link">📈 Statistiques</a>
+
+    <div class="admin-nav-section">UTILISATEURS</div>
+    <a href="#" class="sidebar-link">🎓 Élèves</a>
+    <a href="#" class="sidebar-link">👩‍🏫 Tuteurs</a>
+    <a href="#" class="sidebar-link">⏳ Candidatures</a>
+
+    <div class="admin-nav-section">TRANSACTIONS</div>
+    <a href="#" class="sidebar-link">🪙 Crédits</a>
+    <a href="#" class="sidebar-link">💳 Paiements</a>
+    <a href="#" class="sidebar-link">📅 Réservations</a>
+
+    <div class="admin-nav-section">CONTENU</div>
+    <a href="#" class="sidebar-link">❓ FAQ</a>
+    <a href="#" class="sidebar-link">🌍 Langues</a>
+    <a href="#" class="sidebar-link">📝 Contenu</a>
+
+    <div style="margin-top:auto">
+      <a href="index.html" class="sidebar-link">← Site public</a>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="dashboard-main">
+    <div class="dashboard-header">
+      <h1>Administration FRENGLAIS</h1>
+      <p>Vue d'ensemble de la plateforme.</p>
+    </div>
+
+    <!-- Stats -->
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:24px">
+      <div class="db-card">
+        <div class="db-card-value">142</div>
+        <div class="db-card-label">Élèves inscrits</div>
+      </div>
+      <div class="db-card green">
+        <div class="db-card-value" style="color:var(--traveller)">18</div>
+        <div class="db-card-label">Tuteurs actifs</div>
+      </div>
+      <div class="db-card red">
+        <div class="db-card-value" style="color:var(--red)">4</div>
+        <div class="db-card-label">Candidatures en attente</div>
+      </div>
+      <div class="db-card">
+        <div class="db-card-value">836</div>
+        <div class="db-card-label">Crédits vendus (total)</div>
+      </div>
+    </div>
+
+    <!-- Candidatures en attente -->
+    <div style="background:white;border:1px solid var(--gray-200);border-radius:var(--radius-lg);padding:24px;margin-bottom:16px">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px">
+        <h2 style="font-size:1rem;font-weight:700">Candidatures tuteurs en attente</h2>
+        <span style="background:rgba(239,68,68,.1);color:#dc2626;font-size:.72rem;font-weight:700;padding:3px 10px;border-radius:99px">4 en attente</span>
+      </div>
+      <table class="admin-table">
+        <thead>
+          <tr>
+            <th>Candidat</th>
+            <th>Langue</th>
+            <th>Niveau</th>
+            <th>Pays</th>
+            <th>Date</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Emma Laurent</strong><br><span style="font-size:.75rem;color:var(--gray-400)">emma@mail.com</span></td>
+            <td>🇬🇧 Anglais</td>
+            <td>Natif</td>
+            <td>🇫🇷 France</td>
+            <td>10 juin 2025</td>
+            <td style="display:flex;gap:6px">
+              <button class="action-btn validate">Valider</button>
+              <button class="action-btn view">Voir</button>
+              <button class="action-btn reject">Refuser</button>
+            </td>
+          </tr>
+          <tr>
+            <td><strong>James Moore</strong><br><span style="font-size:.75rem;color:var(--gray-400)">james@mail.com</span></td>
+            <td>🇺🇸 Anglais US</td>
+            <td>Natif</td>
+            <td>🇺🇸 USA</td>
+            <td>9 juin 2025</td>
+            <td style="display:flex;gap:6px">
+              <button class="action-btn validate">Valider</button>
+              <button class="action-btn view">Voir</button>
+              <button class="action-btn reject">Refuser</button>
+            </td>
+          </tr>
+          <tr>
+            <td><strong>Sophie Martin</strong><br><span style="font-size:.75rem;color:var(--gray-400)">sophie@mail.com</span></td>
+            <td>🇫🇷 Français</td>
+            <td>C2</td>
+            <td>🇧🇪 Belgique</td>
+            <td>8 juin 2025</td>
+            <td style="display:flex;gap:6px">
+              <button class="action-btn validate">Valider</button>
+              <button class="action-btn view">Voir</button>
+              <button class="action-btn reject">Refuser</button>
+            </td>
+          </tr>
+          <tr>
+            <td><strong>Liam O'Brien</strong><br><span style="font-size:.75rem;color:var(--gray-400)">liam@mail.com</span></td>
+            <td>🇬🇧 Anglais</td>
+            <td>Natif</td>
+            <td>🇮🇪 Irlande</td>
+            <td>7 juin 2025</td>
+            <td style="display:flex;gap:6px">
+              <button class="action-btn validate">Valider</button>
+              <button class="action-btn view">Voir</button>
+              <button class="action-btn reject">Refuser</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Réservations récentes -->
+    <div style="background:white;border:1px solid var(--gray-200);border-radius:var(--radius-lg);padding:24px;margin-bottom:16px">
+      <h2 style="font-size:1rem;font-weight:700;margin-bottom:16px">Réservations récentes</h2>
+      <table class="admin-table">
+        <thead>
+          <tr>
+            <th>Élève</th>
+            <th>Tuteur</th>
+            <th>Langue</th>
+            <th>Date/Heure</th>
+            <th>Crédit</th>
+            <th>Statut</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Camille S.</strong></td>
+            <td>Sarah M.</td>
+            <td>🇬🇧 Anglais</td>
+            <td>11 juin · 15h00</td>
+            <td>-1 crédit</td>
+            <td><span style="background:var(--student-l);color:#2563eb;font-size:.72rem;font-weight:600;padding:3px 10px;border-radius:99px">Confirmé</span></td>
+          </tr>
+          <tr>
+            <td><strong>Lucas B.</strong></td>
+            <td>Marcus L.</td>
+            <td>🇺🇸 Anglais</td>
+            <td>11 juin · 17h30</td>
+            <td>-1 crédit</td>
+            <td><span style="background:var(--student-l);color:#2563eb;font-size:.72rem;font-weight:600;padding:3px 10px;border-radius:99px">Confirmé</span></td>
+          </tr>
+          <tr>
+            <td><strong>Aisha K.</strong></td>
+            <td>Amélie R.</td>
+            <td>🇫🇷 Français</td>
+            <td>10 juin · 19h00</td>
+            <td>-1 crédit</td>
+            <td><span style="background:var(--traveller-l);color:#059669;font-size:.72rem;font-weight:600;padding:3px 10px;border-radius:99px">Effectué</span></td>
+          </tr>
+          <tr>
+            <td><strong>Romain D.</strong></td>
+            <td>Tom B.</td>
+            <td>🇬🇧 Anglais</td>
+            <td>9 juin · 14h00</td>
+            <td>-1 crédit</td>
+            <td><span style="background:var(--gray-100);color:var(--gray-600);font-size:.72rem;font-weight:600;padding:3px 10px;border-radius:99px">Annulé</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Revenus -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+      <div style="background:white;border:1px solid var(--gray-200);border-radius:var(--radius-lg);padding:24px">
+        <h2 style="font-size:1rem;font-weight:700;margin-bottom:16px">Paiements — Juin 2025</h2>
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <div style="display:flex;justify-content:space-between;font-size:.875rem;padding-bottom:10px;border-bottom:1px solid var(--gray-100)">
+            <span>Crédits vendus</span><strong>18 crédits</strong>
+          </div>
+          <div style="display:flex;justify-content:space-between;font-size:.875rem;padding-bottom:10px;border-bottom:1px solid var(--gray-100)">
+            <span>Revenu brut</span><strong>270 €</strong>
+          </div>
+          <div style="display:flex;justify-content:space-between;font-size:.875rem;padding-bottom:10px;border-bottom:1px solid var(--gray-100)">
+            <span>Rémunération tuteurs</span><strong style="color:#dc2626">-180 €</strong>
+          </div>
+          <div style="display:flex;justify-content:space-between;font-size:.95rem;font-weight:700">
+            <span>Marge nette estimée</span><strong style="color:var(--traveller)">90 €</strong>
+          </div>
+        </div>
+      </div>
+      <div style="background:white;border:1px solid var(--gray-200);border-radius:var(--radius-lg);padding:24px">
+        <h2 style="font-size:1rem;font-weight:700;margin-bottom:16px">Répartition crédits</h2>
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <div>
+            <div style="display:flex;justify-content:space-between;font-size:.8rem;margin-bottom:4px">
+              <span>Pack Découverte (1 crédit)</span><span style="font-weight:600">6 ventes</span>
+            </div>
+            <div style="height:6px;background:var(--gray-100);border-radius:99px"><div style="height:100%;width:33%;background:var(--gray-400);border-radius:99px"></div></div>
+          </div>
+          <div>
+            <div style="display:flex;justify-content:space-between;font-size:.8rem;margin-bottom:4px">
+              <span>Pack Régulier (5 crédits)</span><span style="font-weight:600">4 ventes</span>
+            </div>
+            <div style="height:6px;background:var(--gray-100);border-radius:99px"><div style="height:100%;width:22%;background:var(--red-light);border-radius:99px"></div></div>
+          </div>
+          <div>
+            <div style="display:flex;justify-content:space-between;font-size:.8rem;margin-bottom:4px">
+              <span>Pack Progression (10 crédits)</span><span style="font-weight:600">8 ventes</span>
+            </div>
+            <div style="height:6px;background:var(--gray-100);border-radius:99px"><div style="height:100%;width:44%;background:var(--red);border-radius:99px"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
